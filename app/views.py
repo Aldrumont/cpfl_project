@@ -14,7 +14,7 @@ def home(request):
                 # Explicitly catch ParserError instead of any Exception
                 # to avoid hiding other exceptions.
                 df = pd.read_excel(file, sheet_name="CAPEX")
-                context = {'User': request.user, 'df': df}
+                context = {'User': request.user, 'df': df, 'file_name': file.name}
                 return render(request, 'home.html', context)
 
             except pd.errors.ParserError as e:

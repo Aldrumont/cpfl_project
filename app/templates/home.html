@@ -28,8 +28,13 @@
                                     Arquivo para upload
                                 </span>
                             </span>
+                            {% comment %} span with file_name or "Nenhum arquivo selecionado" {% endcomment %}
                             <span class="file-name">
-                                Base_CAPEX.xlsx
+                                {% if file_name %}
+                                {{ file_name }}
+                                {% else %}
+                                Nenhum arquivo selecionado
+                                {% endif %}
                             </span>
                         </label>
                     </div>
